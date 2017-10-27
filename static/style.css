@@ -1,0 +1,173 @@
+body{
+  margin: 0;
+}
+
+/**********************************barre de navigation***********************************/
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+nav li {
+    float: right;
+}
+
+nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+nav li a:hover {
+    background-color: #111;
+}
+
+/**********************************Entête et pied de page***********************************/
+
+header{
+  background-image: radial-gradient(white, rgba(255, 153, 0, 0.5));
+  padding-top: 5vh;
+  font-size: 2em;
+  color: white;
+  border-bottom: solid #996b26 3px;
+}
+
+h1{
+  color: #4d402e;
+  font-size: 1.5em;
+}
+
+h1 a{
+  color: #4d402e;
+  text-decoration: none;
+}
+
+h1, h3
+{
+    text-align:center;
+}
+
+h3{
+  color: lightgray;
+}
+
+
+footer{
+    color: white;
+    background: #444141;;
+    font-size: 0.7em;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+footer a{
+    color: white;
+}
+
+/**********************************Contenu principal***********************************/
+
+
+.container{
+    width: 80%;
+    margin: 10px auto;
+    border-radius: 20px;
+    padding: 10px;
+}
+
+table td{
+  border-bottom: solid 1px white;
+  text-align: left;
+  font-family: Verdana;
+  font-size: 1em;
+  color: gray;
+  padding: 25px;
+}
+
+table{
+  margin-bottom: 20px;
+  background: rgba(255, 153, 0, 0.25);
+  box-shadow: 5px 5px 5px lightgray;
+}
+
+th{
+  padding: 10px;
+  color: gray;
+}
+
+th a{
+  padding: 10px;
+  color: gray;
+}
+
+th a:hover{
+  color: white;
+}
+
+td a{
+  padding: 10px;
+  color: gray;
+}
+
+td a:hover{
+  color: white;
+}
+
+td input{
+  margin: 1px auto;
+  text-align: center;
+  width: 97%;
+}
+
+
+#tableCommentaire{
+  background:#f0d6ae;
+  width: 100%;
+  box-shadow: 0px 0px 0px;
+}
+
+.myButton{
+  color: white;
+  background: #a5854acc;
+  padding: 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 50%;
+  float: right;
+  margin-top: 5px;
+}
+
+.messCom{
+  padding: 5vh 0;
+}
+
+/************************Page article******************************/
+
+
+/*************** Page de connexion ****************/
+
+#contenu-connexion{
+  width: 40%;
+  background: #f2daae80;
+  margin: 30px auto;
+  border-radius: 20px;
+  padding: 70px;
+  text-align: center;
+  box-shadow: 5px 5px 5px lightgray;
+}
+
+#contenu-connexion input{
+  margin : 2px auto 2px auto;
+}
+
+#contenu-connexion .myButton{
+  width: 25%;
+  float: none;
+  margin-top: 20px;
+}
