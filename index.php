@@ -5,6 +5,8 @@ session_start();
 include 'controller/Controller.php';
 include 'controller/ControllerLogin.php';
 include 'controller/ControllerUser.php';
+include 'controller/ControllerSignaler.php';
+include 'controller/ControllerDeconnexion.php';
 
 $user = ControllerUser::userActif();
 
@@ -21,8 +23,16 @@ elseif(isset($_GET['connexion'])){
   $controller->connexionController($_GET['connexion']);
 }
 
-elseif(isset($_POST['login'])){
+elseif(isset($_GET['login'])){
   ControllerLogin::getLogin();
+}
+
+elseif(isset($_GET['deconnexion'])){
+  ControllerDeconnexion::deconnexionController();
+}
+
+ elseif(isset($_GET['signaler'])){
+   ControllerSignaler::signalEffect();
 }
 
 elseif(isset($_GET['administration'])){

@@ -4,8 +4,8 @@ class Comment{
   protected $id;
   protected $author;
   protected $content;
-  protected $resume;
   protected $dateCreation;
+  protected $signaler;
 
   public function getId(){
     return $this->id;
@@ -30,14 +30,14 @@ class Comment{
   public function setContent($content){
     $this->content=$content;
   }
-  public function getResume(){
-    return $this->resume;
+  public function getSignaler(){
+    return $this->signaler;
   }
 
-  public function setResume(){
-    $resume=substr($this->getContent(), 0, 200);
-    return $resume.'...';
+  public function setSignaler($signaler){
+    $this->signaler=$signaler;
   }
+
   public function getDateCreation(){
     return $this->dateCreation;
   }

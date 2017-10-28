@@ -9,7 +9,7 @@ class AbstractEntityRepository{
   }
 
   public function findAll($table){
-    $req = $this -> db -> query('SELECT * FROM '.$table.' ORDER BY ID');
+    $req = $this -> db -> query('SELECT * FROM '.$table.' ORDER BY dateCreation DESC');
     $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, $table);
     $datas = $req -> fetchAll();
     return $datas;

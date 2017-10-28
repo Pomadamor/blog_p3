@@ -171,3 +171,21 @@ td input{
   float: none;
   margin-top: 20px;
 }
+
+/*************Signalé****************/
+
+.submitBillet{
+    margin: 0;
+    padding: 0;
+    line-height: 100%; /* Si ça fonctionne pas mets 0 */
+    border: 0;
+    background: none;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: gray; /* ou transparent je sais plus... */
+    text-decoration: underline; /* Normalement */
+}
+
+.submitBillet:hover{
+  color:lightgray;
+}

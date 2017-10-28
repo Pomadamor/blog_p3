@@ -12,7 +12,7 @@ class ControllerLogin{
         $getLogin=$userRepo -> LogUser($login, $pass);
 
     		if ($getLogin == True) {
-    			echo 'tu es sur le bon chemin';
+    			header("Location:index.php"); 
     		} else {
     			echo 'mauvais login / mot de passe';
     		}

@@ -12,17 +12,14 @@ class Article{
 
   public $donnees=[];
 
-  public function __constuct(){
-    echo("Article");
-    exit;
-    if(!empty($donnees)){
-      $this->comments= CommentRepository::findCommentByArticle($this);
-    }
-  }
-
   public function fetchComments() {
     $comments= new CommentRepository();
     $this->comments= $comments->findCommentByArticle($this);
+  }
+
+  public function fetchCommentsAll() {
+    $comments= new CommentRepository();
+    $this->comments= $comments->findCommentAllByArticle($this);
   }
 
   public function getComments(){
@@ -70,7 +67,13 @@ class Article{
     return $resume.'...';
   }
   public function getDateCreation(){
-    return $this->dateCreation;
+    try {
+        $date = new DateTime($this->dateCreation);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+        exit(1);
+    }
+    echo $date->format('d/m/Y');
   }
 
   public function setDateCreation($dateCreation){

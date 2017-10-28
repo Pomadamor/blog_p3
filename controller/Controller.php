@@ -13,7 +13,15 @@ class Controller{
     foreach ($articles as $article) {
       $article->fetchComments();
     }
-    include('view/home.php');
+    if(!empty($_SESSION)){
+      include('view/headerAdmin.php');
+      include('view/home.php');
+      include('view/footerAdmin.php');
+    }else{
+      include('view/header.php');
+      include('view/home.php');
+      include('view/footer.php');      
+    }
     $html= ob_end_flush();
     return $html;
   }
@@ -23,10 +31,7 @@ class Controller{
     $articleRepo=new ArticleRepository();
     // $articles=$articleRepo->findAll($id, table: 'Article');
     $articles=$articleRepo->find($id, 'Article');
-    foreach ($articles as $article) {
-      $article->fetchComments();
-    }
-    var_dump( $articles );
+    $articles->fetchCommentsAll();
     include('view/article.php');
     $html= ob_end_flush();
     return $html;
