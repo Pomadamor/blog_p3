@@ -20,7 +20,7 @@ class Controller{
     }else{
       include('view/header.php');
       include('view/home.php');
-      include('view/footer.php');      
+      include('view/footer.php');
     }
     $html= ob_end_flush();
     return $html;
@@ -40,6 +40,19 @@ class Controller{
   public function connexionController(){
       ob_start();
       include('view/connexion.php');
+      $html= ob_end_flush();
+      return $html;
+  }
+
+  public function articleAdmin(){
+      ob_start();
+      if(!empty($_SESSION)){
+        include('view/headerAdmin.php');
+        include('view/articleAdmin.php');
+        include('view/footerAdmin.php');
+      }else{
+        echo "vous n'êtes pas connecter";      
+      }
       $html= ob_end_flush();
       return $html;
   }

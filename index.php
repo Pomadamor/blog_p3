@@ -25,6 +25,10 @@ elseif(isset($_GET['connexion'])){
   $controller->connexionController($_GET['connexion']);
 }
 
+elseif(isset($_GET['articleAdmin'])){
+  $controller->articleAdmin($_GET['articleAdmin']);
+}
+
 elseif(isset($_GET['login'])){
   ControllerLogin::getLogin();
 }

@@ -12,7 +12,7 @@
           <li><a href="index.php?deconnexion">Deconnexion</a></li>
           <li><a href="index.php">Aperçu</a></li>
           <li><a href="index.php?">Commentaires</a></li>
-          <li><a href="index.php?">Articles</a></li>
+          <li><a href="index.php?articleAdmin">Articles</a></li>
           <li><a href="index.php?">Ajouter</a></li>
         </ul>
       </nav>
