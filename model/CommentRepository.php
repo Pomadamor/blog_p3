@@ -26,12 +26,16 @@ class CommentRepository extends AbstractEntityRepository{
   }
 
   public function addComment(Comment $comment){
-   $req = $this ->db->prepare('INSERT INTO comment (author,title,content,resume,dateCreation)VALUES(:author,:title,:content,:resume,NOW())');
+   $req = $this ->db->prepare('INSERT INTO Comment (id_article,author,content,dateCreation)VALUES(:id_article,:author,:content,NOW())');
+   $req->bindValue(':id_article',$comment->getId_article());
    $req->bindValue(':author',$comment->getAuthor());
-   $req->bindValue(':title',$comment->getTitle());
    $req->bindValue(':content',$comment->getContent());
-   $req->bindValue(':resume',$comment->getResume());
-   $req->execute();
-  }
+   $result = $req->execute();
+var_dump($result);
+exit;
+   if($result){
+     header("Location:index.php");
+   }else echo "erreur de la base";
+ }
 
 }

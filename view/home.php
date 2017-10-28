@@ -49,10 +49,9 @@
               </table>
             </td>
             <td>
-                <form method='post' action='commentaire.php'>
-                    <input type='hidden' name='id_billet' value='<?php echo $donnees['id_billet']; ?>' />
+                <form method='post' action='index.php?commentAdd'>
+                    <input type='hidden' name='id_article' value='<?php echo $article->getId(); ?>' />
                     <input type='text' name='pseudo' placeholder='Pseudo'></input><br>
-                    <input type='email' name='email' placeholder='Email'></input><br>
                     <input type='text' name='message' class="messCom" placeholder='Message'></input><br>
                     <input type='submit' class='myButton' value='Ajouter'/>
                 </form>

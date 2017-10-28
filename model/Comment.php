@@ -6,6 +6,7 @@ class Comment{
   protected $content;
   protected $dateCreation;
   protected $signaler;
+  protected $id_article;
 
   public function getId(){
     return $this->id;
@@ -15,12 +16,12 @@ class Comment{
     $this->id=$id;
   }
 
-  public function getTitle(){
-    return $this->title;
+  public function getAuthor(){
+    return $this->author;
   }
 
-  public function setTitle($title){
-    $this->title=$title;
+  public function setAuthor($author){
+    $this->author=$author;
   }
 
   public function getContent(){
@@ -44,5 +45,13 @@ class Comment{
 
   public function setDateCreation($dateCreation){
       $this->dateCreation=$dateCreation;
+  }
+
+  public function getId_article(){
+    return $this->id_article;
+  }
+
+  public function setId_article($id_article){
+    $this->id_article=$id_article;
   }
 }

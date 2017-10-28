@@ -7,6 +7,8 @@ include 'controller/ControllerLogin.php';
 include 'controller/ControllerUser.php';
 include 'controller/ControllerSignaler.php';
 include 'controller/ControllerDeconnexion.php';
+include 'controller/ControllerCommentAdd.php';
+
 
 $user = ControllerUser::userActif();
 
@@ -31,8 +33,12 @@ elseif(isset($_GET['deconnexion'])){
   ControllerDeconnexion::deconnexionController();
 }
 
- elseif(isset($_GET['signaler'])){
+elseif(isset($_GET['signaler'])){
    ControllerSignaler::signalEffect();
+}
+
+elseif(isset($_GET['commentAdd'])){
+   ControllerCommentAdd::commentAdd();
 }
 
 elseif(isset($_GET['administration'])){
