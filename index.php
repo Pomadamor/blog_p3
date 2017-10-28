@@ -8,7 +8,8 @@ include 'controller/ControllerUser.php';
 include 'controller/ControllerSignaler.php';
 include 'controller/ControllerDeconnexion.php';
 include 'controller/ControllerCommentAdd.php';
-
+include 'controller/ControllerComment.php';
+include 'controller/ControllerArticle.php';
 
 $user = ControllerUser::userActif();
 
@@ -49,12 +50,28 @@ elseif(isset($_GET['signaler'])){
    ControllerSignaler::signalEffect();
 }
 
+elseif(isset($_GET['modifierArticle'])){
+   ControllerArticle::modifierArticle();
+}
+
+elseif(isset($_GET['supprimerArticle'])){
+  ControllerArticle::supprimerArticle();
+}
+
+elseif(isset($_GET['accepterComment'])){
+  ControllerComment::accepterComment();
+}
+
+elseif(isset($_GET['supprimerComment'])){
+   ControllerComment::supprimerComment();
+}
+
 elseif(isset($_GET['commentAdd'])){
    ControllerCommentAdd::commentAdd();
 }
 
-elseif(isset($_GET['administration'])){
-  $controller->administrateurController($_GET['administration']);
+elseif(isset($_GET['articleAddAdmin'])){
+   ControllerArticle::articleAddAdmin();
 }
 
 else{

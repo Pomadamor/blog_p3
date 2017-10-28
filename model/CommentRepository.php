@@ -39,11 +39,22 @@ class CommentRepository extends AbstractEntityRepository{
    $req->bindValue(':author',$comment->getAuthor());
    $req->bindValue(':content',$comment->getContent());
    $result = $req->execute();
-var_dump($result);
-exit;
    if($result){
      header("Location:index.php");
    }else echo "erreur de la base";
  }
+
+  public function commentOk($id){
+    $resultat = $this -> db->query("UPDATE Comment
+                            SET signaler = '0'
+                            WHERE ".$id." = `id`");
+    $resultat->execute();
+  }
+
+  public function commentSup($id){
+    $resultat = $this -> db->query("DELETE FROM Comment
+                            WHERE ".$id." = `id`");
+    $resultat->execute();
+  }
 
 }

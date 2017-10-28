@@ -58,13 +58,14 @@ class Article{
   public function setContent($content){
     $this->content=$content;
   }
+
   public function getResume(){
     return $this->resume;
   }
 
   public function setResume(){
     $resume=substr($this->getContent(), 0, 100);
-    return $resume.'...';
+    $this -> resume = $resume .'...';
   }
   public function getDateCreation(){
     try {

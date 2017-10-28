@@ -94,6 +94,7 @@ table{
   margin-bottom: 20px;
   background: rgba(255, 153, 0, 0.25);
   box-shadow: 5px 5px 5px lightgray;
+  width: 100%;
 }
 
 th{
@@ -235,16 +236,27 @@ td input{
 }
 
 /**********************Tableau Articles Admin**************************/
-
-.containerAdmin{
-  margin : 25px;
+.containerArticleAdmin{
+  margin : 25px auto;
+  width: 80%;
 }
 
+.containerArticleAdmin table{
+  margin : 0 auto;
+}
+.containerAdmin{
+  margin : 25px auto;
+}
+
+.containerAdmin table{
+  margin : 0 auto;
+}
 /**********************Tableau Commentaire Admin**************************/
 
 #signalOk{
   background: #ff5a0066;
 }
+
 
 .articleAdd{
 	width:60%;
