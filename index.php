@@ -29,6 +29,14 @@ elseif(isset($_GET['articleAdmin'])){
   $controller->articleAdmin($_GET['articleAdmin']);
 }
 
+elseif(isset($_GET['commentAdmin'])){
+  $controller->commentAdmin($_GET['commentAdmin']);
+}
+
+elseif(isset($_GET['articleAdd'])){
+  $controller->articleAdd($_GET['articleAdd']);
+}
+
 elseif(isset($_GET['login'])){
   ControllerLogin::getLogin();
 }

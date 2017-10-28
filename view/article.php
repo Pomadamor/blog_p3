@@ -1,4 +1,3 @@
-<?php include("header.php"); ?>
 <div class="container">
    <h1><?php echo $articles -> getTitle(); ?></h1>
    <p><?php  echo $articles -> getContent()?></p>
@@ -32,4 +31,3 @@
       <?php endforeach; ?>
    </div>
 </div>
-<?php include("footer.php"); ?>

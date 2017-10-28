@@ -4,6 +4,9 @@
         <meta charset="utf-8" />
         <title>Blog : Jean Forteroche</title>
         <link href="static/style.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script src="https://cloud.tinymce.com/stable/tinymce.min.js"></script>
+        <script>tinymce.init({ selector:'textarea' });</script>      
     </head>
 
     <body>
@@ -11,9 +14,9 @@
         <ul>
           <li><a href="index.php?deconnexion">Deconnexion</a></li>
           <li><a href="index.php">Aperçu</a></li>
-          <li><a href="index.php?">Commentaires</a></li>
+          <li><a href="index.php?commentAdmin">Commentaires</a></li>
           <li><a href="index.php?articleAdmin">Articles</a></li>
-          <li><a href="index.php?">Ajouter</a></li>
+          <li><a href="index.php?articleAdd">Ajouter</a></li>
         </ul>
       </nav>
       <header>

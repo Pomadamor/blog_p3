@@ -18,6 +18,14 @@ class CommentRepository extends AbstractEntityRepository{
     return $datas;
   }
 
+  public function findAllBySignale(){
+    $req = $this -> db -> query('SELECT * FROM Comment ORDER BY `signaler` DESC, dateCreation DESC');
+    $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Comment');
+    $datas = $req -> fetchAll();
+    return $datas;
+  }
+
+
   public function signalActif($idComm){
     $resultat = $this -> db->query("UPDATE Comment
                             SET signaler = '1'

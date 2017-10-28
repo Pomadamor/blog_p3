@@ -63,7 +63,7 @@ class Article{
   }
 
   public function setResume(){
-    $resume=substr($this->getContent(), 0, 200);
+    $resume=substr($this->getContent(), 0, 100);
     return $resume.'...';
   }
   public function getDateCreation(){

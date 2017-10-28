@@ -1,6 +1,5 @@
 <div class="container">
-    <?php foreach ($articles as $article): ?>
-
+  <?php foreach ($articles as $article): ?>
       <table>
           <tr>
               <th><a href="index.php?article=<?php echo $article->getId(); ?>"><?php echo $article -> getTitle(); ?></a></th>

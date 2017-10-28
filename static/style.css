@@ -233,3 +233,29 @@ td input{
   float: inherit;
   margin : 0 auto;
 }
+
+/**********************Tableau Articles Admin**************************/
+
+.containerAdmin{
+  margin : 25px;
+}
+
+/**********************Tableau Commentaire Admin**************************/
+
+#signalOk{
+  background: #ff5a0066;
+}
+
+.articleAdd{
+	width:60%;
+	margin: 10px auto;
+}
+
+.articleAdd input{
+	margin : 10px auto;
+	width:80%;
+}
+
+.articleAdd .ajout{
+  width : 20%;
+}

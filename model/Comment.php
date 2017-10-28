@@ -40,7 +40,13 @@ class Comment{
   }
 
   public function getDateCreation(){
-    return $this->dateCreation;
+    try {
+        $date = new DateTime($this->dateCreation);
+    } catch (Exception $e) {
+        echo $e->getMessage();
+        exit(1);
+    }
+    echo $date->format('d/m/Y');
   }
 
   public function setDateCreation($dateCreation){
