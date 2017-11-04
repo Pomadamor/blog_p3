@@ -5,14 +5,16 @@ class CommentRepository extends AbstractEntityRepository{
 
 
   public function findCommentByArticle(Article $a){
-    $req = $this -> db->query("SELECT * FROM Comment WHERE id_article =".$a->getId()." ORDER BY dateCreation DESC LIMIT 3;");
+    $req = $this -> db->prepare("SELECT * FROM Comment WHERE :id_article = id ORDER BY dateCreation DESC LIMIT 3;");
+    $req -> bindValue(':id_article',$a->getId());
     $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Comment');
     $datas = $req -> fetchAll();
     return $datas;
   }
 
   public function findCommentAllByArticle(Article $a){
-    $req = $this -> db->query("SELECT * FROM Comment WHERE id_article =".$a->getId()." ORDER BY dateCreation DESC;");
+    $req = $this -> db->prepare("SELECT * FROM Comment WHERE :id_article = id ORDER BY dateCreation DESC;");
+    $req -> bindValue(':id_article',$a->getId());
     $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Comment');
     $datas = $req -> fetchAll();
     return $datas;
@@ -27,9 +29,10 @@ class CommentRepository extends AbstractEntityRepository{
 
 
   public function signalActif($idComm){
-    $resultat = $this -> db->query("UPDATE Comment
+    $resultat = $this -> db->prepare("UPDATE Comment
                             SET signaler = '1'
-                            WHERE ".$idComm." = `id`");
+                            WHERE :idComm = `id`");
+    $resultat->bindValue(':idComm',$idComm);
     $resultat->execute();
   }
 
@@ -45,15 +48,17 @@ class CommentRepository extends AbstractEntityRepository{
  }
 
   public function commentOk($id){
-    $resultat = $this -> db->query("UPDATE Comment
+    $resultat = $this -> db->prepare("UPDATE Comment
                             SET signaler = '0'
-                            WHERE ".$id." = `id`");
+                            WHERE :id = `id`");
+    $resultat->bindValue(':id',$id);
     $resultat->execute();
   }
 
   public function commentSup($id){
-    $resultat = $this -> db->query("DELETE FROM Comment
-                            WHERE ".$id." = `id`");
+    $resultat = $this -> db->prepare("DELETE FROM Comment
+                            WHERE :id = `id`");
+    $resultat->bindValue(':id',$id);
     $resultat->execute();
   }
 

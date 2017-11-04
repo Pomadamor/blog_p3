@@ -13,14 +13,20 @@ class Controller{
     foreach ($articles as $article) {
       $article->fetchComments();
     }
-    if(!empty($_SESSION)){
-      include('view/headerAdmin.php');
-      include('view/home.php');
-      include('view/footerAdmin.php');
-    }else{
+    $userRepo = new UserRepository();
+    $user = $userRepo->getLoggedUser();
+    if($user === false){
       include('view/header.php');
       include('view/home.php');
       include('view/footer.php');
+    }elseif($user->getAdmin() == True){
+      include('view/headerAdmin.php');
+      include('view/homeConnecte.php');
+      include('view/footerAdmin.php');
+    }else{
+      include('view/headerConnecte.php');
+      include('view/homeConnecte.php');
+      include('view/footerAdmin.php');
     }
     $html= ob_end_flush();
     return $html;

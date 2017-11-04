@@ -16,7 +16,8 @@ class AbstractEntityRepository{
   }
 
   public function find($id, $table){
-    $req = $this -> db -> query('SELECT * FROM '.$table.' WHERE id='.$id);
+    $req = $this -> db -> prepare('SELECT * FROM '.$table.' WHERE :id=id');
+    $req->bindValue(':id',$id);
     $req->execute();
     $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, $table);
     $datas = $req -> fetch();

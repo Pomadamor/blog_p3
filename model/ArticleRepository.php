@@ -17,8 +17,9 @@ class ArticleRepository extends AbstractEntityRepository{
   }
 
   public function articleSup($id){
-    $resultat = $this -> db->query("DELETE FROM Article
-                            WHERE ".$id." = `id`");
+    $resultat = $this -> db->prepare("DELETE FROM Article
+                            WHERE :id=id");
+    $resultat->bindValue(':id', $id);
     $resultat->execute();
   }
 

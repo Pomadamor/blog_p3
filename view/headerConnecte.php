@@ -9,9 +9,9 @@
     <body>
       <nav>
         <ul>
-          <li><a href="index.php?connexion">Connexion</a></li>
-          <li><a href="index.php?inscription">Inscription</a></li>
-          <li><a href="index.php">Accueil</a></li>
+          <li><a href="index.php?deconnexion">Deconnexion</a></li>
+          <li><a href="index.php">Articles</a></li>
+          <li><a href="index.php?commentConnect">Commentaires</a></li>
         </ul>
       </nav>
       <header>

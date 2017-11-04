@@ -10,10 +10,11 @@ class UserRepository extends AbstractEntityRepository{
 
   public function getLoggedUser(){
     if ( isset( $_SESSION['user_id'] ) ) {
-      $requete = $this -> db->query(
+      $requete = $this -> db->prepare(
         'SELECT *
         FROM User
-        WHERE User.id = "'.$_SESSION['user_id'].'"' );
+        WHERE User.id = :sid' );
+      $resultat->bindValue(':sid',$_SESSION['user_id']);
       $resultat = $requete->execute();
       $requete->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'User');
       $user = $requete -> fetch();
@@ -23,10 +24,12 @@ class UserRepository extends AbstractEntityRepository{
 
   public function logUser($login, $password){
     if( !empty( $login ) && !empty( $password ) ) {
-      $requete = $this -> db->query(
+      $requete = $this -> db->prepare(
       'SELECT *
        FROM User
-       WHERE mail = "'.$login.'" AND mdp = "'.$password.'"' );
+       WHERE mail = :login AND mdp = :password' );
+      $resultat->bindValue(':login',$login);
+      $resultat->bindValue(':password',$password);
       $resultat = $requete->execute();
       $requete->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'User');
       $user = $requete -> fetch();
