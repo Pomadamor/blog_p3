@@ -4,6 +4,7 @@ session_start();
 //On démarre la session
 include 'controller/Controller.php';
 include 'controller/ControllerLogin.php';
+include 'controller/ControllerInscript.php';
 include 'controller/ControllerUser.php';
 include 'controller/ControllerSignaler.php';
 include 'controller/ControllerDeconnexion.php';
@@ -26,6 +27,14 @@ elseif(isset($_GET['connexion'])){
   $controller->connexionController($_GET['connexion']);
 }
 
+elseif(isset($_GET['inscription'])){
+  $controller->inscriptionController($_GET['inscription']);
+}
+
+elseif(isset($_GET['commentConnect'])){
+  $controller->commentController($_GET['commentConnect']);
+}
+
 elseif(isset($_GET['articleAdmin'])){
   $controller->articleAdmin($_GET['articleAdmin']);
 }
@@ -42,6 +51,10 @@ elseif(isset($_GET['login'])){
   ControllerLogin::getLogin();
 }
 
+elseif(isset($_GET['inscripValid'])){
+  ControllerInscript::getInscript();
+}
+
 elseif(isset($_GET['deconnexion'])){
   ControllerDeconnexion::deconnexionController();
 }
@@ -51,7 +64,11 @@ elseif(isset($_GET['signaler'])){
 }
 
 elseif(isset($_GET['modifierArticle'])){
-   ControllerArticle::modifierArticle();
+   $controller->modifierArticle($_POST['id']);
+}
+
+elseif(isset($_GET['articleModifier'])){
+  ControllerArticle::modifierArticle();
 }
 
 elseif(isset($_GET['supprimerArticle'])){

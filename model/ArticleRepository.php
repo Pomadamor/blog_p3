@@ -16,6 +16,16 @@ class ArticleRepository extends AbstractEntityRepository{
    }else echo "erreur de la base";
   }
 
+  public function articleModifier(Article $article){
+    $resultat = $this -> db->prepare("UPDATE Article
+                            SET title = :title, content = :content
+                            WHERE :id = `id`");
+    $resultat->bindValue(':title',$article->getTitle());
+    $resultat->bindValue(':content',$article->getContent());
+    $resultat->bindValue(':id',$article->getId());
+    $resultat->execute();
+  }
+
   public function articleSup($id){
     $resultat = $this -> db->prepare("DELETE FROM Article
                             WHERE :id=id");

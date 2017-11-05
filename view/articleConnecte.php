@@ -4,7 +4,7 @@
    <p style="text-align:right"><?php  echo $articles -> getDateCreation()?></p>
    <p><a href="index.php">Retour</a></p>
    <div class="formComment">
-     <h2>Ajouté un commentaire :</h2>
+     <h2>Ajouter un commentaire :</h2>
      <form method='post' action='index.php?commentAdd'>
          <input type='hidden' name='id_article' value='<?php echo $articles->getId(); ?>' />
          <input type='text' name='pseudo' placeholder='Pseudo'></input><br>

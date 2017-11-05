@@ -14,9 +14,9 @@ class UserRepository extends AbstractEntityRepository{
         'SELECT *
         FROM User
         WHERE User.id = :sid' );
-      $resultat->bindValue(':sid',$_SESSION['user_id']);
-      $resultat = $requete->execute();
+      $requete->bindValue(':sid',$_SESSION['user_id']);
       $requete->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'User');
+      $resultat = $requete->execute();
       $user = $requete -> fetch();
       return $user;
     }else return false;
@@ -27,10 +27,10 @@ class UserRepository extends AbstractEntityRepository{
       $requete = $this -> db->prepare(
       'SELECT *
        FROM User
-       WHERE mail = :login AND mdp = :password' );
-      $resultat->bindValue(':login',$login);
-      $resultat->bindValue(':password',$password);
-      $resultat = $requete->execute();
+       WHERE mail = :login AND mdp = PASSWORD(:password)' );
+      $requete->bindValue(':password',$password);
+      $requete->bindValue(':login',$login);
+      $req = $requete->execute();
       $requete->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'User');
       $user = $requete -> fetch();
       if($user !== false){
@@ -41,11 +41,12 @@ class UserRepository extends AbstractEntityRepository{
   }
 
   public function add(User $user){
-   $req = $this ->db->prepare('INSERT INTO user (mail,prenom,mdp)VALUES(:mail,:prenom,:mdp)');
+   $req = $this ->db->prepare('INSERT INTO User (mail,prenom,mdp)VALUES(:mail,:prenom,PASSWORD(:mdp))');
    $req->bindValue(':mail',$user->getMail());
    $req->bindValue(':prenom',$user->getPrenom());
    $req->bindValue(':mdp',$user->getMdp());
-   $req->execute();
+   $resultat = $req->execute();
+   return $resultat;
   }
 
 }

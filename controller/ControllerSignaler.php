@@ -3,8 +3,9 @@ require_once("model/CommentRepository.php");
 
 class ControllerSignaler{
   public static function signalEffect() {
-    if (!empty($_POST['idComm'])){
-      $idComm= $_POST['idComm'];
+    $idComm= htmlspecialchars($_POST['idComm']);
+
+    if (!empty($idComm)){
 
       $signAc = new CommentRepository();
       $sigEf =$signAc -> signalActif($idComm);

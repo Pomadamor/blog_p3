@@ -3,11 +3,14 @@ require_once("model/ArticleRepository.php");
 
 class ControllerArticle{
   public static function articleAddAdmin() {
-      if ((!empty($_POST['titre']))&&(!empty($_POST['content']))){
+      $titre=htmlspecialchars($_POST['titre']);
+      $content=htmlspecialchars($_POST['content']);
+
+      if ((!empty($titre))&&(!empty($content))){
         $article = new Article();
         $article -> setAuthor('Jean Forteroche');
-        $article -> setTitle($_POST['titre']);
-        $article -> setContent($_POST['content']);
+        $article -> setTitle($titre);
+        $article -> setContent($content);
         $article -> setResume();
 
         $articleAdd = new ArticleRepository();
@@ -17,16 +20,32 @@ class ControllerArticle{
   }
 
   public static function modifierArticle() {
+    $titre=htmlspecialchars($_POST['titre']);
+    $content=htmlspecialchars($_POST['content']);
+    $id=htmlspecialchars($_POST['id']);
 
+    if ((!empty($titre))&&(!empty($content))&&(!empty($id))){
+      $article = new Article();
+      $article -> setAuthor('Jean Forteroche');
+      $article -> setTitle($titre);
+      $article -> setContent($content);
+      $article -> setResume();
+      $article -> setId($id);
+
+      $articleModif = new ArticleRepository();
+      $modifArticle = $articleModif -> articleModifier($article);
+      header("Location:index.php?articleAdmin");
+    }
   }
 
   public static function supprimerArticle() {
-    if (!empty($_POST['id'])){
-      $id= $_POST['id'];
+    $id= htmlspecialchars($_POST['id']);
+
+    if (!empty($id)){
 
       $suppAc = new ArticleRepository();
       $suppEf =$suppAc -> articleSup($id);
-      header("Location:index.php");
+      header("Location:index.php?articleAdmin");
     }
   }
 

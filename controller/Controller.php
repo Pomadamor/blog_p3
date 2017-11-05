@@ -35,17 +35,22 @@ class Controller{
   public function articleController($id){
     ob_start();
     $articleRepo=new ArticleRepository();
-    // $articles=$articleRepo->findAll($id, table: 'Article');
     $articles=$articleRepo->find($id, 'Article');
     $articles->fetchCommentsAll();
-    if(!empty($_SESSION)){
-      include('view/headerAdmin.php');
-      include('view/article.php');
-      include('view/footerAdmin.php');
-    }else{
+    $userRepo = new UserRepository();
+    $user = $userRepo->getLoggedUser();
+    if($user === false){
       include('view/header.php');
       include('view/article.php');
       include('view/footer.php');
+    }elseif($user->getAdmin() == True){
+      include('view/headerAdmin.php');
+      include('view/articleConnecte.php');
+      include('view/footerAdmin.php');
+    }else{
+      include('view/headerConnecte.php');
+      include('view/articleConnecte.php');
+      include('view/footerAdmin.php');
     }
     $html= ob_end_flush();
     return $html;
@@ -54,6 +59,27 @@ class Controller{
   public function connexionController(){
       ob_start();
       include('view/connexion.php');
+      $html= ob_end_flush();
+      return $html;
+  }
+
+  public function inscriptionController(){
+      ob_start();
+      include('view/inscription.php');
+      $html= ob_end_flush();
+      return $html;
+  }
+
+  public function commentController(){
+      ob_start();
+      $userRepo = new UserRepository();
+      $user = $userRepo->getLoggedUser();
+      $commentRepo=new CommentRepository();
+      $comments=$commentRepo->findAllById($user);
+
+      include('view/headerConnecte.php');
+      include('view/commentConnecte.php');
+      include('view/footerAdmin.php');
       $html= ob_end_flush();
       return $html;
   }
@@ -96,6 +122,21 @@ class Controller{
       if(!empty($_SESSION)){
         include('view/headerAdmin.php');
         include('view/articleAdd.php');
+        include('view/footerAdmin.php');
+      }else{
+        echo "vous n'êtes pas connecter";
+      }
+      $html= ob_end_flush();
+      return $html;
+  }
+
+  public function modifierArticle($id){
+      ob_start();
+      $articleRepo=new ArticleRepository();
+      $articles=$articleRepo->find($id, 'Article');
+      if(!empty($_SESSION)){
+        include('view/headerAdmin.php');
+        include('view/modifierArticle.php');
         include('view/footerAdmin.php');
       }else{
         echo "vous n'êtes pas connecter";

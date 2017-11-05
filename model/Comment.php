@@ -7,6 +7,7 @@ class Comment{
   protected $dateCreation;
   protected $signaler;
   protected $id_article;
+  protected $id_user;
 
   public function getId(){
     return $this->id;
@@ -59,5 +60,13 @@ class Comment{
 
   public function setId_article($id_article){
     $this->id_article=$id_article;
+  }
+
+  public function getId_user(){
+    return $this->id_user;
+  }
+
+  public function setId_user($id_user){
+    $this->id_user=$id_user;
   }
 }

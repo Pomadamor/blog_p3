@@ -5,24 +5,37 @@ class CommentRepository extends AbstractEntityRepository{
 
 
   public function findCommentByArticle(Article $a){
-    $req = $this -> db->prepare("SELECT * FROM Comment WHERE :id_article = id ORDER BY dateCreation DESC LIMIT 3;");
+    $req = $this -> db->prepare("SELECT * FROM Comment WHERE :id_article = id_article ORDER BY dateCreation DESC LIMIT 3;");
     $req -> bindValue(':id_article',$a->getId());
     $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Comment');
+    $req -> execute();
     $datas = $req -> fetchAll();
     return $datas;
   }
 
   public function findCommentAllByArticle(Article $a){
-    $req = $this -> db->prepare("SELECT * FROM Comment WHERE :id_article = id ORDER BY dateCreation DESC;");
+    $req = $this -> db->prepare("SELECT * FROM Comment WHERE :id_article = id_article ORDER BY dateCreation DESC;");
     $req -> bindValue(':id_article',$a->getId());
     $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Comment');
+    $req -> execute();
     $datas = $req -> fetchAll();
     return $datas;
   }
 
-  public function findAllBySignale(){
-    $req = $this -> db -> query('SELECT * FROM Comment ORDER BY `signaler` DESC, dateCreation DESC');
+  public function findAllById($user){
+    $req = $this -> db->prepare("SELECT * FROM Comment WHERE :id_user = id_user ORDER BY dateCreation DESC;");
+    $req -> bindValue(':id_user',$user->getId());
     $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Comment');
+    $req -> execute();
+    $datas = $req -> fetchAll();
+
+    return $datas;
+  }
+
+  public function findAllBySignale(){
+    $req = $this -> db -> query('SELECT Comment.*, User.prenom as author FROM Comment INNER JOIN User WHERE User.id = Comment.id_user ORDER BY `signaler` DESC, dateCreation DESC');
+    $req->setFetchMode(PDO::FETCH_CLASS|PDO::FETCH_PROPS_LATE, 'Comment');
+    $req -> execute();
     $datas = $req -> fetchAll();
     return $datas;
   }
@@ -37,9 +50,9 @@ class CommentRepository extends AbstractEntityRepository{
   }
 
   public function addComment(Comment $comment){
-   $req = $this ->db->prepare('INSERT INTO Comment (id_article,author,content,dateCreation)VALUES(:id_article,:author,:content,NOW())');
+   $req = $this ->db->prepare('INSERT INTO Comment (id_article,id_user,content,dateCreation)VALUES(:id_article,:id_user,:content,NOW())');
    $req->bindValue(':id_article',$comment->getId_article());
-   $req->bindValue(':author',$comment->getAuthor());
+   $req->bindValue(':id_user',$comment->getId_user());
    $req->bindValue(':content',$comment->getContent());
    $result = $req->execute();
    if($result){

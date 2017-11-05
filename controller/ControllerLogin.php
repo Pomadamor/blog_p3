@@ -3,16 +3,17 @@ require("model/UserRepository.php");
 
 class ControllerLogin{
   public static function getLogin() {
+    $login=htmlspecialchars($_POST['mail']);
+    $pass=htmlspecialchars($_POST['pass']);
 
-    if ( !empty($_POST['mail']) && !empty($_POST['pass'])) {
-    		$login=$_POST['mail'];
-    		$pass=$_POST['pass'];
+
+    if ( !empty($login) && !empty($pass)) {
 
     		$userRepo = new UserRepository();
         $getLogin=$userRepo -> LogUser($login, $pass);
 
     		if ($getLogin == True) {
-    			header("Location:index.php"); 
+    			header("Location:index.php");
     		} else {
     			echo 'mauvais login / mot de passe';
     		}

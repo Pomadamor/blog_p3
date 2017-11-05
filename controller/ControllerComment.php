@@ -3,22 +3,31 @@ require_once("model/CommentRepository.php");
 
 class ControllerComment{
   public static function accepterComment() {
-    if (!empty($_POST['id'])){
-      $id= $_POST['id'];
+    $id= htmlspecialchars($_POST['id']);
+
+    if (!empty($id)){
 
       $acceptAc = new CommentRepository();
       $acceptEf =$acceptAc -> commentOk($id);
-      header("Location:index.php");
+      header("Location:index?commentAdmin.php");
     }
   }
 
   public static function supprimerComment() {
-    if (!empty($_POST['id'])){
-      $id= $_POST['id'];
-
+    $userRepo = new UserRepository();
+    $user = $userRepo->getLoggedUser();
+    $id= htmlspecialchars($_POST['id']);
+    if (!empty($id)){
       $suppAc = new CommentRepository();
       $suppEf =$suppAc -> commentSup($id);
-      header("Location:index.php");
+      if($user === false){
+        header("Location:index.php");
+      }
+      elseif($user->getAdmin() == True){
+        header("Location:index.php?commentAdmin");
+      }else{
+        header("Location:index.php?commentConnect");
+      }
     }
   }
 
