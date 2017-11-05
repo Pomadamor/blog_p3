@@ -4,7 +4,7 @@ require_once("model/ArticleRepository.php");
 class ControllerArticle{
   public static function articleAddAdmin() {
       $titre=htmlspecialchars($_POST['titre']);
-      $content=htmlspecialchars($_POST['content']);
+      $content=$_POST['content'];
 
       if ((!empty($titre))&&(!empty($content))){
         $article = new Article();
