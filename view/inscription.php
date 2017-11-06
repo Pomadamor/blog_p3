@@ -1,5 +1,5 @@
 <?php include("header.php"); ?>
-<div id="contenu-connexion">
+<div class="container" style="text-align:center">
   <form method='post' action='index.php?inscripValid'>
       <input type='hidden' name='login' />
       <h2>Inscription</h2>

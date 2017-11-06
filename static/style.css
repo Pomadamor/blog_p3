@@ -1,33 +1,6 @@
 body{
   margin: 0;
 }
-
-/**********************************barre de navigation***********************************/
-
-nav ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background-color: #333;
-}
-
-nav li {
-    float: right;
-}
-
-nav li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-}
-
-nav li a:hover {
-    background-color: #111;
-}
-
 /**********************************Entête et pied de page***********************************/
 
 header{
@@ -74,12 +47,12 @@ footer a{
 /**********************************Contenu principal***********************************/
 
 
-.container{
+/*.container{
     width: 80%;
     margin: 10px auto;
     border-radius: 20px;
     padding: 10px;
-}
+}*/
 
 table td{
   border-bottom: solid 1px white;
