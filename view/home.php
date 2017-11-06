@@ -19,18 +19,17 @@
             <p class="post-meta">>
               <?php
               if(count($article->getComments())==0){
-                echo "Soyez le premier à commenter !";
+                echo "<p class='post-meta'>Soyez le premier à commenter !<p>";
               }
               else foreach ($article->getComments() as $comment):
-               echo $comment->getContent(); ?></td>
-            </p>
-            <p>
+               echo "<p class='post-meta'>".$comment->getContent()."</p>"; ?>
+              <p>
               <?php
               if($comment->getSignaler()== '0'){
                 ?>
                 <form method="post" action="index.php?signaler">
                   <input type="hidden" name="idComm" value="<?php echo $comment->getId(); ?>"/>
-                  <input class="submitBillet" type="submit" value="Signaler" title="signaler">
+                  <input class="submitBillet" type="submit" style="margin-left:70%" value="Signaler" title="signaler">
                 </form>
                 <?php
               }
@@ -38,7 +37,7 @@
               <?php endforeach; ?>
               <?php
               if(count($article->getComments())>2){
-                echo "<a href='index.php?article=".$article->getId()."'> Voir tout les commentaires</a>";
+                echo "<a href='index.php?article=".$article->getId()."'><b> Voir tout les commentaires</b></a>";
               } ?>
             </p>
           <?php endforeach; ?>

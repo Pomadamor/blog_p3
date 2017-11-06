@@ -1,4 +1,4 @@
-<div class="articleAdd">
+<div class="container">
   <h1>Modifier le contenu de l'article</h1>
   <form method='post' action='index.php?articleModifier'>
      <input type='text' name='titre'value="<?php echo $articles -> getTitle(); ?>"></input><br>
