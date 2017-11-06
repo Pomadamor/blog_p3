@@ -31,7 +31,7 @@
         </ul>
         <p class="copyright text-muted">Copyright © 2017 - Ines ECK - Tous droits réservés</p>
         <p class="copyright text-muted">
-          <a href="index.php?connexion">Connexion</a> - <a href= #>Mention légale</a>
+        <a href="index.php?connexion">Connexion</a> - <a href="index.php?mentionLegale">Mention légale</a>
         </p>
       </div>
     </div>

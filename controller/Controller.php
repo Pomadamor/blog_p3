@@ -32,6 +32,27 @@ class Controller{
     return $html;
   }
 
+    public function mentionController(){
+      ob_start();
+      $userRepo = new UserRepository();
+      $user = $userRepo->getLoggedUser();
+      if($user === false){
+        include('view/header.php');
+        include('view/mentionlegale.php');
+        include('view/footer.php');
+      }elseif($user->getAdmin() == True){
+        include('view/headerAdmin.php');
+        include('view/mentionlegale.php');
+        include('view/footerAdmin.php');
+      }else{
+        include('view/headerConnecte.php');
+        include('view/mentionlegale.php');
+        include('view/footerAdmin.php');
+      }
+      $html= ob_end_flush();
+      return $html;
+    }
+
   public function articleController($id){
     ob_start();
     $articleRepo=new ArticleRepository();

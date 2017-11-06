@@ -27,6 +27,10 @@ elseif(isset($_GET['connexion'])){
   $controller->connexionController($_GET['connexion']);
 }
 
+elseif(isset($_GET['mentionLegale'])){
+  $controller->mentionController($_GET['mentionLegale']);
+}
+
 elseif(isset($_GET['inscription'])){
   $controller->inscriptionController($_GET['inscription']);
 }
