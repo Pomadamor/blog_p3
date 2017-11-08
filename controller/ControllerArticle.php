@@ -21,7 +21,7 @@ class ControllerArticle{
 
   public static function modifierArticle() {
     $titre=htmlspecialchars($_POST['titre']);
-    $content=htmlspecialchars($_POST['content']);
+    $content=$_POST['content'];
     $id=htmlspecialchars($_POST['id']);
 
     if ((!empty($titre))&&(!empty($content))&&(!empty($id))){
