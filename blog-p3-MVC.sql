@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 16, 2017 at 10:12 AM
+-- Generation Time: Nov 16, 2017 at 10:32 AM
 -- Server version: 10.1.26-MariaDB-0+deb9u1
 -- PHP Version: 7.0.19-1
 
@@ -89,7 +89,7 @@ CREATE TABLE `User` (
   `mail` varchar(100) NOT NULL,
   `prenom` varchar(100) NOT NULL,
   `mdp` varchar(200) NOT NULL,
-  `admin` tinyint(1) NOT NULL
+  `admin` tinyint(1) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -103,7 +103,9 @@ INSERT INTO `User` (`id`, `mail`, `prenom`, `mdp`, `admin`) VALUES
 (6, 'a@a', 'a', '*667F407DE7C6AD07358FA38DAED7828A72014B4E', 0),
 (7, 'plop@plop.fr', 'plip', '*2F01F3D078AE27EB3017F8F53DF9C31AEA6D90C5', 0),
 (8, 'lerna@lerna.fr', 'Lerna', '*DB870D14F04D3E5436A298798C5F2352F5BDBF6A', 0),
-(9, 'lerna@lerna.fr', 'Lerna', '*DB870D14F04D3E5436A298798C5F2352F5BDBF6A', 0);
+(9, 'lerna@lerna.fr', 'Lerna', '*DB870D14F04D3E5436A298798C5F2352F5BDBF6A', 0),
+(10, 'plop@plop', 'plop', '*03063CAC3772D754F6DB5CCEDD48376F09AC8CDD', 0),
+(11, 'a@a', 'a', '*667F407DE7C6AD07358FA38DAED7828A72014B4E', 0);
 
 --
 -- Indexes for dumped tables
@@ -147,7 +149,7 @@ ALTER TABLE `Comment`
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- Constraints for dumped tables
 --
