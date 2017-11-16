@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container"><div id="haut"></div>
 <h1 class="post-title" style="color:lightblue">Mentions légales</h1>
 <h5><em>Ce site a été réalisé dans le cadre d’une formation.</em><br />
 <em>Il n’est aucunement lié à Jean Forteroche.</em><br />

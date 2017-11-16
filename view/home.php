@@ -4,8 +4,8 @@
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="post-preview">
         <?php foreach ($articles as $article): ?>
-          <a href="index.php?article=<?php echo $article->getId(); ?>">
-            <h2 class="post-title" style="color:lightblue">
+          <a href="index.php?article#haut=<?php echo $article->getId(); ?>">
+            <h2 class="post-title" style="color:lightblue"><div id="haut"></div>
               <?php echo $article -> getTitle(); ?>
             </h2>
             <p>
@@ -27,7 +27,7 @@
               <?php
               if($comment->getSignaler()== '0'){
                 ?>
-                <form method="post" action="index.php?signaler">
+                <form method="post" action="index.php?signaler#haut">
                   <input type="hidden" name="idComm" value="<?php echo $comment->getId(); ?>"/>
                   <input class="submitBillet" type="submit" style="margin-left:70%" value="Signaler" title="signaler">
                 </form>
@@ -37,7 +37,7 @@
               <?php endforeach; ?>
               <?php
               if(count($article->getComments())>2){
-                echo "<a href='index.php?article=".$article->getId()."'><b> Voir tout les commentaires</b></a>";
+                echo "<a href='index.php?article=".$article->getId()."#haut'><b> Voir tout les commentaires</b></a>";
               } ?>
             </p>
           <?php endforeach; ?>

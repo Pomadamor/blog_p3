@@ -24,9 +24,9 @@ class ControllerComment{
         header("Location:index.php");
       }
       elseif($user->getAdmin() == True){
-        header("Location:index.php?commentAdmin");
+        header("Location:index.php?commentAdmin#haut");
       }else{
-        header("Location:index.php?commentConnect");
+        header("Location:index.php?commentConnect#haut");
       }
     }
   }

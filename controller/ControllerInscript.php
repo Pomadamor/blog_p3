@@ -17,7 +17,7 @@ class ControllerInscript{
     		$userRepo = new UserRepository();
         $getInscript=$userRepo -> add($user);
     		if ($getInscript == True) {
-    			header("Location:index.php");
+    			header("Location:index.php?connexion#haut");
     		} else {
     			echo "erreur d'inscription";
     		}

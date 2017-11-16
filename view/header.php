@@ -38,11 +38,11 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
                  <li class="nav-item">
-                    <a class="nav-link" href="index.php?connexion">Connexion</a></li>
+                    <a class="nav-link" href="index.php?connexion#haut">Connexion</a></li>
                  <li class="nav-item">
-                    <a class="nav-link" href="index.php?inscription">Inscription</a></li>
+                    <a class="nav-link" href="index.php?inscription#haut">Inscription</a></li>
                 <li class="nav-item">
-                   <a class="nav-link" href="index.php">Accueil</a></li>
+                   <a class="nav-link" href="index.php#haut">Accueil</a></li>
                 </ul>
             </div>
         </div>

@@ -42,6 +42,14 @@ td input{
   width: 97%;
 }
 
+p{
+  text-align: justify;
+}
+
+.message{
+  width: 85%;
+  padding: 5vh 0;
+}
 
 #tableCommentaire{
   background:#f0d6ae;
@@ -50,5 +58,5 @@ td input{
 }
 
 #signalOk{
-  background:lightblue;
+  background: coral;
 }

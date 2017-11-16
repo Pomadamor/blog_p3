@@ -18,6 +18,9 @@ class ControllerCommentAdd{
       $commentAdd = new CommentRepository();
       $addComment = $commentAdd -> addComment($comment);
       header("Location:index.php");
+    }else{
+      echo "Veuillez écrire un commentaire - <a href='index.php'>Rééssayer</a>";
+
     }
   }
 

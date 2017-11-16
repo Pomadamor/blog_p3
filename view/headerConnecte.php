@@ -15,7 +15,7 @@
 
         <!-- Custom styles for this template -->
         <link href="css/clean-blog.min.css" rel="stylesheet">
-	 	    <link rel="stylesheet" href="css/style.css" />                
+	 	    <link rel="stylesheet" href="css/style.css" />
         <!-- Bootstrap core JavaScript -->
         <script src="vendor/jquery/jquery.min.js"></script>
         <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -39,11 +39,11 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
                  <li class="nav-item">
-                   <a href="index.php?deconnexion">Deconnexion</a></li>
+                   <a href="index.php?deconnexion#haut">Deconnexion</a></li>
                  <li class="nav-item">
                    <a href="index.php">Articles</a></li>
                  <li class="nav-item">
-                   <a href="index.php?commentConnect">Commentaires</a></li>
+                   <a href="index.php?commentConnect#haut">Commentaires</a></li>
                 </ul>
             </div>
         </div>

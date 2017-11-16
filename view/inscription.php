@@ -1,8 +1,8 @@
 <?php include("header.php"); ?>
 <div class="container" style="text-align:center">
-  <form method='post' action='index.php?inscripValid'>
+  <form method='post' action='index.php?inscripValid#haut'>
       <input type='hidden' name='login' />
-      <h2>Inscription</h2>
+      <h2>Inscription<div id="haut"></div></h2>
       Prenom ou pseudo :<br>
       <input type='text' name='prenom'> <br>
       Courriel<br>

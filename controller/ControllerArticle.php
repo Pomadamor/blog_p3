@@ -15,8 +15,8 @@ class ControllerArticle{
 
         $articleAdd = new ArticleRepository();
         $addArtile = $articleAdd -> add($article);
-        header("Location:index.php");
-      }
+        header("Location:index.php#haut");
+      }else echo "Remplir titre et contenu !";
   }
 
   public static function modifierArticle() {
@@ -34,7 +34,7 @@ class ControllerArticle{
 
       $articleModif = new ArticleRepository();
       $modifArticle = $articleModif -> articleModifier($article);
-      header("Location:index.php?articleAdmin");
+      header("Location:index.php?articleAdmin#haut");
     }
   }
 
@@ -45,7 +45,7 @@ class ControllerArticle{
 
       $suppAc = new ArticleRepository();
       $suppEf =$suppAc -> articleSup($id);
-      header("Location:index.php?articleAdmin");
+      header("Location:index.php?articleAdmin#haut");
     }
   }
 

@@ -4,9 +4,9 @@
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="post-preview">
         <?php foreach ($articles as $article): ?>
-          <a href="index.php?article=<?php echo $article->getId(); ?>">
+          <a href="index.php?article=<?php echo $article->getId(); ?>#haut">
             <h2 class="post-title" style="color:lightblue">
-              <?php echo $article -> getTitle(); ?>
+              <?php echo $article -> getTitle(); ?><div id="haut"></div>
             </h2>
             <p>
               <?php echo $article -> getContent(); ?>
@@ -16,9 +16,9 @@
             <h3 class="post-title">
               Commentaire :
             </h3>
-            <form method='post' action='index.php?commentAdd'>
+            <form method='post' action='index.php?commentAdd#haut'>
                 <input type='hidden' name='id_article' value='<?php echo $article->getId(); ?>' />
-                <input type='text' name='message' style="padding: 5vh 50% 5vh 0;" placeholder='Message'></input><br>
+                <input type='text' name='message' class="message" placeholder='Message'></input><br>
                 <input type='submit' class='myButton'style="margin-left:70%" value='Ajouter'/>
             </form>
               <?php
@@ -31,7 +31,7 @@
               <?php
               if($comment->getSignaler()== '0'){
                 ?>
-                <form method="post" action="index.php?signaler">
+                <form method="post" action="index.php?signaler#haut">
                   <input type="hidden" name="idComm" value="<?php echo $comment->getId(); ?>"/>
                   <input class="submitBillet" type="submit" style="margin-left:70%" value="Signaler" title="signaler">
                 </form>
@@ -41,7 +41,7 @@
               <?php endforeach; ?>
               <?php
               if(count($article->getComments())>2){
-                echo "<a href='index.php?article=".$article->getId()."'><b> Voir tout les commentaires</b></a>";
+                echo "<a href='index.php?article=".$article->getId()."#haut'><b> Voir tout les commentaires</b></a>";
               } ?>
             </p>
           <?php endforeach; ?>

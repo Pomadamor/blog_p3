@@ -1,5 +1,5 @@
 <div class="container">
-   <h1 style="color:lightblue"><?php echo $articles -> getTitle(); ?></h1>
+   <h1 style="color:lightblue"><?php echo $articles -> getTitle(); ?><div id="haut"></div></h1>
    <p><?php  echo $articles -> getContent()?></p>
    <p style="text-align:right"><?php  echo $articles -> getDateCreation()?></p>
    <p><a href="index.php">Retour</a></p>
@@ -12,7 +12,7 @@
          <?php
              if($comment->getSignaler()== '0'){
              ?>
-             <form method="post" action="index.php?signaler">
+             <form method="post" action="index.php?signaler#haut">
                <input type="hidden" name="idComm" value="<?php echo $comment->getId(); ?>"/>
                <input class="submitBillet" type="submit" value="signaler" title="signaler">
              </form>
