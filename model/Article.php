@@ -67,6 +67,7 @@ class Article{
     $resume=substr($this->getContent(), 0, 100);
     $this -> resume = $resume .'...';
   }
+  
   public function getDateCreation(){
     try {
         $date = new DateTime($this->dateCreation);

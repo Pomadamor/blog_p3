@@ -18,10 +18,11 @@ class ArticleRepository extends AbstractEntityRepository{
 
   public function articleModifier(Article $article){
     $resultat = $this -> db->prepare("UPDATE Article
-                            SET title = :title, content = :content
+                            SET title = :title, content = :content, resume = :resume
                             WHERE :id = `id`");
     $resultat->bindValue(':title',$article->getTitle());
     $resultat->bindValue(':content',$article->getContent());
+    $resultat->bindValue(':resume',$article->getResume());
     $resultat->bindValue(':id',$article->getId());
     $resultat->execute();
   }
