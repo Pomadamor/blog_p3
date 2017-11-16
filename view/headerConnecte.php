@@ -39,7 +39,7 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
                  <li class="nav-item">
-                   <a href="index.php?deconnexion#haut">Deconnexion</a></li>
+                   <a href="index.php?deconnexion">Deconnexion</a></li>
                  <li class="nav-item">
                    <a href="index.php">Articles</a></li>
                  <li class="nav-item">
