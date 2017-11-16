@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 05, 2017 at 10:39 PM
+-- Generation Time: Nov 16, 2017 at 10:12 AM
 -- Server version: 10.1.26-MariaDB-0+deb9u1
 -- PHP Version: 7.0.19-1
 
@@ -49,9 +49,7 @@ INSERT INTO `Article` (`id`, `author`, `title`, `content`, `resume`, `dateCreati
 (11, 'Jean Forteroche', 'Chapitre 9', 'D\'un coup de pioche, ils firent sauter le couvercle et nous aperçûmes un squelette démesurément long, couché sur le dos, qui, de son oeil creux, semblait encore nous regarder et nous défier ; j\'éprouvai un malaise, je ne sais pourquoi j\'eus presque peur. \"Tiens ! s\'écria un des hommes, regardez donc, le gredin a un poignet coupé, voilà sa main.\" Et il ramassa à côté du corps une grande main desséchée qu\'il nous présenta. \"Dis donc, fit l\'autre en riant, on dirait qu\'il te regarde et qu\'il va te sauter à la gorge pour que tu lui rendes sa main. - Allons mes amis, dit le curé, laissez les morts en paix et refermez ce cercueil, nous creuserons autre part la tombe de ce pauvre monsieur Pierre. ', '', '2017-10-27 17:00:00'),
 (12, 'Jean', 'test', 'test de contenu', 'resumer', '2017-10-29 01:27:41'),
 (13, 'Jean Forteroche', 'Chapitre Test', '<p>La 5eme sera la bonne !</p>', '<p>La 5eme sera la bonne !</p>...', '2017-10-29 01:34:23'),
-(15, 'Jean Forteroche', 'Chapitre infini', '&lt;p&gt;Un jour ca marchera ....&lt;/p&gt;', '<p>h&eacute;h&eacute; plus que quelque modif et c\'est fini !!!</p>...', '2017-10-29 01:51:05'),
-(17, 'Jean Forteroche', 'AHAHAHAHA', '&lt;p&gt;Fuck la live !&lt;/p&gt;', '&lt;p&gt;Fuck la live !&lt;/p&gt;...', '2017-11-05 22:33:18'),
-(18, 'Jean Forteroche', 'Un jour ca marchera', '<p>OUUUUUUUUUUUUUUUUUUUUUUUUUU PAAAAAAAAAAAAAAAAAAAAAAAAAAAAS!</p>', '<p>OUUUUUUUUUUUUUUUUUUUUUUUUUU PAAAAAAAAAAAAAAAAAAAAAAAAAAAAS!</p>...', '2017-11-05 22:37:20');
+(15, 'Jean Forteroche', 'Chapitre infini', '&lt;p&gt;Un jour ca marchera ....&lt;/p&gt;', '<p>h&eacute;h&eacute; plus que quelque modif et c\'est fini !!!</p>...', '2017-10-29 01:51:05');
 
 -- --------------------------------------------------------
 
@@ -64,7 +62,7 @@ CREATE TABLE `Comment` (
   `content` text NOT NULL,
   `dateCreation` datetime NOT NULL,
   `id_article` int(10) NOT NULL,
-  `signaler` tinyint(1) NOT NULL,
+  `signaler` tinyint(1) NOT NULL DEFAULT '0',
   `id_user` int(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -75,7 +73,10 @@ CREATE TABLE `Comment` (
 INSERT INTO `Comment` (`id`, `content`, `dateCreation`, `id_article`, `signaler`, `id_user`) VALUES
 (5, 'Test du nombre d\'article', '2017-10-28 05:00:00', 11, 0, 2),
 (7, 'Test du nombre d\'article', '2017-10-28 05:00:00', 11, 0, 2),
-(16, 'Test de commentaire de fin de parojet avec plein de de de de de... DE', '2017-11-05 21:41:42', 15, 0, 2);
+(16, 'Test de commentaire de fin de parojet avec plein de de de de de... DE', '2017-11-05 21:41:42', 15, 0, 2),
+(21, 'plop n1', '2017-11-06 15:00:54', 15, 1, 1),
+(22, 'Il était un petit homme, pirouette, cacahouette... Il', '2017-11-06 17:11:17', 15, 1, 1),
+(23, 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjj', '2017-11-16 09:28:15', 15, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -99,7 +100,10 @@ INSERT INTO `User` (`id`, `mail`, `prenom`, `mdp`, `admin`) VALUES
 (1, 'plop@plop.fr', 'plop', '*2F01F3D078AE27EB3017F8F53DF9C31AEA6D90C5', 1),
 (2, 'plip@plip.fr', 'plip', '*D9F8D9806ECACC30D91FA062C9CD7E15E47E3332', 0),
 (4, 'lerna@lerna.fr', 'Lerna', 'lerna', 0),
-(6, 'a@a', 'a', '*667F407DE7C6AD07358FA38DAED7828A72014B4E', 0);
+(6, 'a@a', 'a', '*667F407DE7C6AD07358FA38DAED7828A72014B4E', 0),
+(7, 'plop@plop.fr', 'plip', '*2F01F3D078AE27EB3017F8F53DF9C31AEA6D90C5', 0),
+(8, 'lerna@lerna.fr', 'Lerna', '*DB870D14F04D3E5436A298798C5F2352F5BDBF6A', 0),
+(9, 'lerna@lerna.fr', 'Lerna', '*DB870D14F04D3E5436A298798C5F2352F5BDBF6A', 0);
 
 --
 -- Indexes for dumped tables
@@ -133,17 +137,17 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT for table `Article`
 --
 ALTER TABLE `Article`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `Comment`
 --
 ALTER TABLE `Comment`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 --
 -- AUTO_INCREMENT for table `User`
 --
 ALTER TABLE `User`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- Constraints for dumped tables
 --
