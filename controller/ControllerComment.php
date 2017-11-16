@@ -9,7 +9,7 @@ class ControllerComment{
 
       $acceptAc = new CommentRepository();
       $acceptEf =$acceptAc -> commentOk($id);
-      header("Location:index?commentAdmin.php");
+      header("Location:index.php?commentAdmin");
     }
   }
 
