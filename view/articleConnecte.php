@@ -7,7 +7,7 @@
      <h2>Ajouter un commentaire :</h2>
      <form method='post' action='index.php?commentAdd#haut'>
          <input type='hidden' name='id_article' value='<?php echo $articles->getId(); ?>' />
-         <input type='text' name='message' class="messCom" placeholder='Message'></input><br>
+         <input type='text' name='message' class="message" placeholder='Message'></input><br>
          <input type='submit' class='myButton' value='Ajouter'/>
      </form>
    </div>
