@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Nov 16, 2017 at 10:32 AM
+-- Generation Time: Nov 16, 2017 at 10:49 AM
 -- Server version: 10.1.26-MariaDB-0+deb9u1
 -- PHP Version: 7.0.19-1
 
@@ -31,7 +31,7 @@ CREATE TABLE `Article` (
   `author` text NOT NULL,
   `title` varchar(100) NOT NULL,
   `content` text NOT NULL,
-  `resume` varchar(100) NOT NULL,
+  `resume` varchar(110) NOT NULL,
   `dateCreation` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -49,7 +49,8 @@ INSERT INTO `Article` (`id`, `author`, `title`, `content`, `resume`, `dateCreati
 (11, 'Jean Forteroche', 'Chapitre 9', 'D\'un coup de pioche, ils firent sauter le couvercle et nous aperçûmes un squelette démesurément long, couché sur le dos, qui, de son oeil creux, semblait encore nous regarder et nous défier ; j\'éprouvai un malaise, je ne sais pourquoi j\'eus presque peur. \"Tiens ! s\'écria un des hommes, regardez donc, le gredin a un poignet coupé, voilà sa main.\" Et il ramassa à côté du corps une grande main desséchée qu\'il nous présenta. \"Dis donc, fit l\'autre en riant, on dirait qu\'il te regarde et qu\'il va te sauter à la gorge pour que tu lui rendes sa main. - Allons mes amis, dit le curé, laissez les morts en paix et refermez ce cercueil, nous creuserons autre part la tombe de ce pauvre monsieur Pierre. ', '', '2017-10-27 17:00:00'),
 (12, 'Jean', 'test', 'test de contenu', 'resumer', '2017-10-29 01:27:41'),
 (13, 'Jean Forteroche', 'Chapitre Test', '<p>La 5eme sera la bonne !</p>', '<p>La 5eme sera la bonne !</p>...', '2017-10-29 01:34:23'),
-(15, 'Jean Forteroche', 'Chapitre infini', '&lt;p&gt;Un jour ca marchera ....&lt;/p&gt;', '<p>h&eacute;h&eacute; plus que quelque modif et c\'est fini !!!</p>...', '2017-10-29 01:51:05');
+(15, 'Jean Forteroche', 'Chapitre infini', '&lt;p&gt;Un jour ca marchera ....&lt;/p&gt;', '<p>h&eacute;h&eacute; plus que quelque modif et c\'est fini !!!</p>...', '2017-10-29 01:51:05'),
+(16, 'Jean Forteroche', 'Chapitre Test ;)', '<p>\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?\"</p>', '<p>\"But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain wa', '2017-11-16 10:42:47');
 
 -- --------------------------------------------------------
 
@@ -76,7 +77,8 @@ INSERT INTO `Comment` (`id`, `content`, `dateCreation`, `id_article`, `signaler`
 (16, 'Test de commentaire de fin de parojet avec plein de de de de de... DE', '2017-11-05 21:41:42', 15, 0, 2),
 (21, 'plop n1', '2017-11-06 15:00:54', 15, 1, 1),
 (22, 'Il était un petit homme, pirouette, cacahouette... Il', '2017-11-06 17:11:17', 15, 1, 1),
-(23, 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjj', '2017-11-16 09:28:15', 15, 0, 1);
+(23, 'jjjjjjjjjjjjjjjjjjjjjjjjjjjjj', '2017-11-16 09:28:15', 15, 0, 1),
+(24, 'Ce chapitre est définitivement le meilleur de tout le livre !', '2017-11-16 10:43:25', 16, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -139,12 +141,12 @@ ALTER TABLE `User`
 -- AUTO_INCREMENT for table `Article`
 --
 ALTER TABLE `Article`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT for table `Comment`
 --
 ALTER TABLE `Comment`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
 --
 -- AUTO_INCREMENT for table `User`
 --
