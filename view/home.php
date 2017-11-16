@@ -4,7 +4,7 @@
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="post-preview">
         <?php foreach ($articles as $article): ?>
-          <a href="index.php?article#haut=<?php echo $article->getId(); ?>">
+          <a href="index.php?article=<?php echo $article->getId(); ?>#haut">
             <h2 class="post-title" style="color:lightblue"><div id="haut"></div>
               <?php echo $article -> getTitle(); ?>
             </h2>
