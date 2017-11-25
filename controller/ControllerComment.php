@@ -1,5 +1,5 @@
 <?php
-require_once("model/CommentRepository.php");
+// require_once("model/CommentRepository.php");
 
 class ControllerComment{
   public static function accepterComment() {

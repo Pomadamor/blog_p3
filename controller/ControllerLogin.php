@@ -1,5 +1,5 @@
 <?php
-require("model/UserRepository.php");
+// require("model/UserRepository.php");
 
 class ControllerLogin{
   public static function getLogin() {

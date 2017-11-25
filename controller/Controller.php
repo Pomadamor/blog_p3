@@ -1,8 +1,8 @@
 <?php
 
-require("model/Article.php");
-require("model/DatabaseConnexion.php");
-require("model/ArticleRepository.php");
+// require("model/Article.php");
+// require("model/DatabaseConnexion.php");
+// require("model/ArticleRepository.php");
 
 
 class Controller{

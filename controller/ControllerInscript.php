@@ -1,5 +1,5 @@
 <?php
-require_once("model/UserRepository.php");
+// require_once("model/UserRepository.php");
 
 class ControllerInscript{
   public static function getInscript() {

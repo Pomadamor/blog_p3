@@ -1,16 +1,10 @@
 <?php
 
-session_start();
 //On démarre la session
-include 'controller/Controller.php';
-include 'controller/ControllerLogin.php';
-include 'controller/ControllerInscript.php';
-include 'controller/ControllerUser.php';
-include 'controller/ControllerSignaler.php';
-include 'controller/ControllerDeconnexion.php';
-include 'controller/ControllerCommentAdd.php';
-include 'controller/ControllerComment.php';
-include 'controller/ControllerArticle.php';
+session_start();
+
+include_once ('_config.php');
+MyAutoload::start();
 
 $user = ControllerUser::userActif();
 

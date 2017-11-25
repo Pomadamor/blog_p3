@@ -1,5 +1,5 @@
 <?php
-require_once("model/ArticleRepository.php");
+// require_once("model/ArticleRepository.php");
 
 class ControllerArticle{
   public static function articleAddAdmin() {
