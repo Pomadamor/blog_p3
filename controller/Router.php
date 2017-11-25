@@ -4,6 +4,8 @@ class Router
 {
 
     protected $path;
+    protected $params;
+
     protected $paths = array (
     'article'           => array( 'controller' => 'Controller',            'method' => 'articleController'),
     'connexion'         => array( 'controller' => 'Controller',            'method' => 'connexionController'),
@@ -26,43 +28,26 @@ class Router
     'commentAdd'        => array( 'controller' => 'ControllerComment',     'method' => 'commentAdd'),
   );
 
-  public function __construct($path)
+  public function __construct($path, $params)
   {
-      $this->path = $path;
-  }
-
-  public function getPathName()
-  {
-    $element = explode('/', $this->path);
-    return $element['0'];
-  }
-
-  public function getParams()
-  {
-    $elements = explode('/', $this->path);
-    unset($elements[0]);
-    for($i = 1; $i < count($elements); $i++)
-    {
-      $params[$elements[$i]] = $elements[$i+1];
-      $i++;
-    }
-    return $params;
+      $this->path   = $path;
+      $this->params = $params;
   }
 
   public function renderController()
   {
-    $pathname = $this->getPathName();
-    $params = $this->getParams();
+    $pathname = $this->path;
+    $params   = $this->params;
     if(array_key_exists($pathname, $this->paths))
     {
       $controller = $this->paths[$pathname]['controller'];
-      $method = $this->paths[$pathname]['method'];
+      $method     = $this->paths[$pathname]['method'];
 
       $controller = new $controller();
       $controller->$method($params);
     }else{
       $controller = new Controller();
-      $controller->errorController();
+      $controller->homeController();
     }
     // if assets
     // erreur 404

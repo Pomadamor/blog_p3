@@ -1,6 +1,6 @@
 <?php
 
-require('model/User.php');
+// require('model/User.php');
 
 class UserRepository extends AbstractEntityRepository{
 

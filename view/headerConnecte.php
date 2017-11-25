@@ -39,11 +39,11 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
                  <li class="nav-item">
-                   <a href="index.php?deconnexion">Deconnexion</a></li>
+                   <a href="index.php?path=deconnexion">Deconnexion</a></li>
                  <li class="nav-item">
                    <a href="index.php">Articles</a></li>
                  <li class="nav-item">
-                   <a href="index.php?commentConnect#haut">Commentaires</a></li>
+                   <a href="index.php?path=commentConnect#haut">Commentaires</a></li>
                 </ul>
             </div>
         </div>

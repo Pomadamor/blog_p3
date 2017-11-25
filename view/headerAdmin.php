@@ -43,11 +43,11 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="navbarResponsive">
               <ul class="navbar-nav ml-auto">
-                 <li class="nav-item"><a href="index.php?deconnexion">Deconnexion</a></li>
+                 <li class="nav-item"><a href="index.php?path=deconnexion">Deconnexion</a></li>
                  <li class="nav-item"><a href="index.php">Aperçu</a></li>
-                 <li class="nav-item"><a href="index.php?commentAdmin#haut">Commentaires</a></li>
-                 <li class="nav-item"><a href="index.php?articleAdmin#haut">Articles</a></li>
-                 <li class="nav-item"><a href="index.php?articleAdd#haut">Ajouter</a></li>
+                 <li class="nav-item"><a href="index.php?path=commentAdmin#haut">Commentaires</a></li>
+                 <li class="nav-item"><a href="index.php?path=articleAdmin#haut">Articles</a></li>
+                 <li class="nav-item"><a href="index.php?path=articleAdd#haut">Ajouter</a></li>
               </ul>
             </div>
         </div>

@@ -9,7 +9,7 @@ class ControllerComment{
 
       $acceptAc = new CommentRepository();
       $acceptEf =$acceptAc -> commentOk($id);
-      header("Location:index.php?commentAdmin");
+      header("Location:index.php?path=commentAdmin");
     }
   }
 
@@ -24,9 +24,9 @@ class ControllerComment{
         header("Location:index.php");
       }
       elseif($user->getAdmin() == True){
-        header("Location:index.php?commentAdmin#haut");
+        header("Location:index.php?path=commentAdmin#haut");
       }else{
-        header("Location:index.php?commentConnect#haut");
+        header("Location:index.php?path=commentConnect#haut");
       }
     }
   }

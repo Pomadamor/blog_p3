@@ -12,7 +12,7 @@
          <?php
              if($comment->getSignaler()== '0'){
              ?>
-             <form method="post" action="index.php?signaler#haut">
+             <form method="post" action="index.php?path=signaler#haut">
                <input type="hidden" name="idComm" value="<?php echo $comment->getId(); ?>"/>
                <input class="submitBillet" type="submit" value="signaler" title="signaler">
              </form>

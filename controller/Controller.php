@@ -151,11 +151,12 @@ class Controller{
       return $html;
   }
 
-  public function modifierArticle($id){
+  public function modifierArticle(){
       ob_start();
-      $articleRepo=new ArticleRepository();
-      $articles=$articleRepo->find($id, 'Article');
       if(!empty($_SESSION)){
+        $id=$_POST['id'];
+        $articleRepo=new ArticleRepository();
+        $articles=$articleRepo->find($id, 'Article');
         include('view/headerAdmin.php');
         include('view/modifierArticle.php');
         include('view/footerAdmin.php');

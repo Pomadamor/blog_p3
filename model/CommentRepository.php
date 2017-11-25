@@ -1,6 +1,6 @@
 <?php
-require_once('Comment.php');
-require_once('AbstractEntityRepository.php');
+// require_once('Comment.php');
+// require_once('AbstractEntityRepository.php');
 class CommentRepository extends AbstractEntityRepository{
 
 

@@ -1,6 +1,6 @@
 <?php include("header.php"); ?>
 <div class="container" style="text-align:center">
-  <form method='post' action='index.php?login'>
+  <form method='post' action='index.php?path=login'>
       <input type='hidden' name='login' />
       <h2><div id="haut">Connexion</div></h2>
       Courriel<br>

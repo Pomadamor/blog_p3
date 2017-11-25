@@ -8,7 +8,7 @@
         <td style="width:15%"><?php echo $comment -> getDateCreation(); ?></td>
         <td style="width:55%"><?php echo $comment -> getContent(); ?></td>
         <td style="width:15%">
-          <form method="post" action="index.php?supprimerComment#haut">
+          <form method="post" action="index.php?path=supprimerComment#haut">
             <input type="hidden" name="id" value="<?php echo $comment->getId(); ?>"/>
             <input class="submitBillet" type="submit" value="&#9746;" title="Supprimer">
           </form>

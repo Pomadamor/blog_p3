@@ -4,7 +4,7 @@
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="post-preview">
         <?php foreach ($articles as $article): ?>
-          <a href="index.php?article=<?php echo $article->getId(); ?>#haut">
+          <a href="index.php?path=article=<?php echo $article->getId(); ?>#haut">
             <h2 class="post-title" style="color:lightblue">
               <?php echo $article -> getTitle(); ?><div id="haut"></div>
             </h2>
@@ -16,7 +16,7 @@
             <h3 class="post-title">
               Commentaire :
             </h3>
-            <form method='post' action='index.php?commentAdd#haut'>
+            <form method='post' action='index.php?path=commentAdd#haut'>
                 <input type='hidden' name='id_article' value='<?php echo $article->getId(); ?>' />
                 <input type='text' name='message' class="message" placeholder='Message'></input><br>
                 <input type='submit' class='myButton'style="margin-left:70%" value='Ajouter'/>
@@ -31,7 +31,7 @@
               <?php
               if($comment->getSignaler()== '0'){
                 ?>
-                <form method="post" action="index.php?signaler#haut">
+                <form method="post" action="index.php?path=signaler#haut">
                   <input type="hidden" name="idComm" value="<?php echo $comment->getId(); ?>"/>
                   <input class="submitBillet" type="submit" style="margin-left:70%" value="Signaler" title="signaler">
                 </form>
@@ -41,7 +41,7 @@
               <?php endforeach; ?>
               <?php
               if(count($article->getComments())>2){
-                echo "<a href='index.php?article=".$article->getId()."#haut'><b> Voir tout les commentaires</b></a>";
+                echo "<a href='index.php?path=article=".$article->getId()."#haut'><b> Voir tout les commentaires</b></a>";
               } ?>
             </p>
           <?php endforeach; ?>

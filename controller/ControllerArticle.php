@@ -34,7 +34,7 @@ class ControllerArticle{
 
       $articleModif = new ArticleRepository();
       $modifArticle = $articleModif -> articleModifier($article);
-      header("Location:index.php?articleAdmin#haut");
+      header("Location:index.php?path=articleAdmin#haut");
     }
   }
 
@@ -45,7 +45,7 @@ class ControllerArticle{
 
       $suppAc = new ArticleRepository();
       $suppEf =$suppAc -> articleSup($id);
-      header("Location:index.php?articleAdmin#haut");
+      header("Location:index.php?path=articleAdmin#haut");
     }
   }
 

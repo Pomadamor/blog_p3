@@ -1,5 +1,5 @@
 <?php
-  require("controller/ControllerVerif.php");
+  // require("controller/ControllerVerif.php");
   // require('model/DatabaseConnexion.php');
 
   class User{

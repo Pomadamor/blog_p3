@@ -12,5 +12,6 @@ if(!empty($_GET['path'])){
   $path="";
 }
 
-$router = new Router($path);
+$params = $_GET;
+$router = new Router($path, $params);
 $router->renderController();

@@ -1,5 +1,5 @@
 <?php
-require('model/CommentRepository.php');
+// require('model/CommentRepository.php');
 
 class Article{
   protected $id;
@@ -67,7 +67,7 @@ class Article{
     $resume=substr($this->getContent(), 0, 100);
     $this -> resume = $resume .'...';
   }
-  
+
   public function getDateCreation(){
     try {
         $date = new DateTime($this->dateCreation);

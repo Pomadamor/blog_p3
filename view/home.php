@@ -27,7 +27,7 @@
               <?php
               if($comment->getSignaler()== '0'){
                 ?>
-                <form method="post" action="index.php?signaler#haut">
+                <form method="post" action="index.php?path=signaler#haut">
                   <input type="hidden" name="idComm" value="<?php echo $comment->getId(); ?>"/>
                   <input class="submitBillet" type="submit" style="margin-left:70%" value="Signaler" title="signaler">
                 </form>
@@ -37,7 +37,7 @@
               <?php endforeach; ?>
               <?php
               if(count($article->getComments())>2){
-                echo "<a href='index.php?article=".$article->getId()."#haut'><b> Voir tout les commentaires</b></a>";
+                echo "<a href='index.php?path=article=".$article->getId()."#haut'><b> Voir tout les commentaires</b></a>";
               } ?>
             </p>
           <?php endforeach; ?>
