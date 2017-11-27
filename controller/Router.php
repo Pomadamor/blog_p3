@@ -49,10 +49,5 @@ class Router
       $controller = new Controller();
       $controller->homeController();
     }
-    // if assets
-    // erreur 404
   }
 }
-// else{
-//   $controller->errorController();
-// }

@@ -51,6 +51,7 @@ class Controller{
   public function articleController($id){
     ob_start();
     $articleRepo = new ArticleRepository();
+    $id          = $_GET['article'];
     $articles    = $articleRepo->find($id, 'Article');
     $articles->fetchCommentsAll();
     $userRepo    = new UserRepository();
