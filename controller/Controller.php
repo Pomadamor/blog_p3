@@ -92,7 +92,7 @@ class Controller{
       $user        = $userRepo->getLoggedUser();
       $commentRepo = new CommentRepository();
       $comments    = $commentRepo->findAllById($user);
-      if( ($user !== false) && ($user->getAdmin() == True) ){
+      if( ($user !== false) ){
         include('view/headerConnecte.php');
         include('view/commentConnecte.php');
         include('view/footerAdmin.php');
@@ -115,7 +115,7 @@ class Controller{
       include('view/articleAdmin.php');
       include('view/footerAdmin.php');
     }else{
-      echo "vous n'êtes pas connecter";
+      echo "Vous n'êtes pas connecté";
     }
     $html = ob_end_flush();
     return $html;
@@ -132,7 +132,7 @@ class Controller{
       include('view/commentAdmin.php');
       include('view/footerAdmin.php');
     }else{
-      echo "vous n'êtes pas connecter";
+      echo "Vous n'êtes pas connecté";
     }
     $html= ob_end_flush();
     return $html;
@@ -147,7 +147,7 @@ class Controller{
         include('view/articleAdd.php');
         include('view/footerAdmin.php');
       }else{
-        echo "vous n'êtes pas connecter";
+        echo "Vous n'êtes pas connecté";
       }
       $html= ob_end_flush();
       return $html;
@@ -165,17 +165,16 @@ class Controller{
         include('view/modifierArticle.php');
         include('view/footerAdmin.php');
       }else{
-        echo "vous n'êtes pas connecter";
+        echo "Vous n'êtes pas connecté";
       }
-      $html= ob_end_flush();
+      $html = ob_end_flush();
       return $html;
   }
-
 
   public function errorController(){
     ob_start();
     include('view/error.php');
-    $html= ob_end_flush();
+    $html = ob_end_flush();
     return $html;
   }
 
