@@ -103,23 +103,13 @@ class Controller{
   }
 
   public function articleAdmin(){
-    ob_start();
     $articleRepo = new ArticleRepository();
     $articles    = $articleRepo->findAll('Article');
     $userRepo    = new UserRepository();
     $user        = $userRepo->getLoggedUser();
-    foreach ($articles as $article) {
-      $article->fetchComments();
-    }
-    if($user !== false){
-      include('view/headerAdmin.php');
-      include('view/articleAdmin.php');
-      include('view/footerAdmin.php');
-    }else{
-      echo "Vous n'êtes pas connecté";
-    }
-    $html = ob_end_flush();
-    return $html;
+    
+    include('view/articleAdmin.php');
+    
   }
 
   public function commentAdmin(){
