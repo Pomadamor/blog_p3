@@ -2,7 +2,7 @@
 
 class ControllerUser{
 
-  public static function userActif(){
+  public function userActif(){
     $userRepo = new UserRepository();
     $user= $userRepo->getLoggedUser();
     return $user;

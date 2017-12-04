@@ -4,7 +4,7 @@
     <div class="col-lg-8 col-md-10 mx-auto">
       <div class="post-preview">
         <?php foreach ($articles as $article): ?>
-          <a href="index.php?path=article=<?php echo $article->getId(); ?>#haut">
+          <a href="index.php?path=article&article=<?php echo $article->getId(); ?>#haut">
             <h2 class="post-title" style="color:lightblue">
               <?php echo $article -> getTitle(); ?><div id="haut"></div>
             </h2>
@@ -41,7 +41,7 @@
               <?php endforeach; ?>
               <?php
               if(count($article->getComments())>2){
-                echo "<a href='index.php?path=article=".$article->getId()."#haut'><b> Voir tout les commentaires</b></a>";
+                echo "<a href='index.php?path=article&article=".$article->getId()."#haut'><b> Voir tout les commentaires</b></a>";
               } ?>
             </p>
           <?php endforeach; ?>

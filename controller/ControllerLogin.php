@@ -2,7 +2,7 @@
 // require("model/UserRepository.php");
 
 class ControllerLogin{
-  public static function getLogin() {
+  public function getLogin() {
     $login=htmlspecialchars($_POST['mail']);
     $pass=htmlspecialchars($_POST['pass']);
 

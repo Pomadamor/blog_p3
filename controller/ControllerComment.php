@@ -2,7 +2,7 @@
 // require_once("model/CommentRepository.php");
 
 class ControllerComment{
-  public static function accepterComment() {
+  public function accepterComment() {
     $id= htmlspecialchars($_POST['id']);
 
     if (!empty($id)){
@@ -13,7 +13,7 @@ class ControllerComment{
     }
   }
 
-  public static function supprimerComment() {
+  public function supprimerComment() {
     $userRepo = new UserRepository();
     $user = $userRepo->getLoggedUser();
     $id= htmlspecialchars($_POST['id']);
@@ -31,7 +31,7 @@ class ControllerComment{
     }
   }
 
-  public static function commentAdd() {
+  public function commentAdd() {
     $id_article = htmlspecialchars($_POST['id_article']);
     $userRepo = new UserRepository();
     $user= $userRepo -> getLoggedUser();

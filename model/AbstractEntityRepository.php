@@ -5,7 +5,8 @@ class AbstractEntityRepository{
   protected $db;
 
   public function __construct(){
-    $this->db=DatabaseConnexion::getDatabaseConnect();
+    $databaseConnexion = new DatabaseConnexion();
+    $this->db = $databaseConnexion->getDatabaseConnect();
   }
 
   public function findAll($table){

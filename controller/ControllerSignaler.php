@@ -2,7 +2,7 @@
 // require_once("model/CommentRepository.php");
 
 class ControllerSignaler{
-  public static function signalEffect() {
+  public function signalEffect() {
     $idComm= htmlspecialchars($_POST['idComm']);
 
     if (!empty($idComm)){

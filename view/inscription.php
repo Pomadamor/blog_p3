@@ -1,4 +1,3 @@
-<?php include("header.php"); ?>
 <div class="container" style="text-align:center">
   <form method='post' action='index.php?path=inscripValid#haut'>
       <input type='hidden' name='login' />
@@ -12,4 +11,3 @@
       <input type='submit' class='myButton' value='Se connecter'>
   </form>
 </div>
-<?php include("footer.php"); ?>

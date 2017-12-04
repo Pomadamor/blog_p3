@@ -37,7 +37,7 @@
               <?php endforeach; ?>
               <?php
               if(count($article->getComments())>2){
-                echo "<a href='index.php?path=article=".$article->getId()."#haut'><b> Voir tout les commentaires</b></a>";
+                echo "<a href='index.php?path=article&article=".$article->getId()."#haut'><b> Voir tout les commentaires</b></a>";
               } ?>
             </p>
           <?php endforeach; ?>

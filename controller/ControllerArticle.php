@@ -2,7 +2,7 @@
 // require_once("model/ArticleRepository.php");
 
 class ControllerArticle{
-  public static function articleAddAdmin() {
+  public function articleAddAdmin() {
       $titre=htmlspecialchars($_POST['titre']);
       $content=$_POST['content'];
 
@@ -19,7 +19,7 @@ class ControllerArticle{
       }else echo "Remplir titre et contenu !";
   }
 
-  public static function modifierArticle() {
+  public function modifierArticle() {
     $titre=htmlspecialchars($_POST['titre']);
     $content=$_POST['content'];
     $id=htmlspecialchars($_POST['id']);
@@ -38,7 +38,7 @@ class ControllerArticle{
     }
   }
 
-  public static function supprimerArticle() {
+  public function supprimerArticle() {
     $id= htmlspecialchars($_POST['id']);
 
     if (!empty($id)){

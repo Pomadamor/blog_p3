@@ -2,7 +2,7 @@
 
 class DatabaseConnexion {
 
-  public static function getDatabaseConnect() {
+  public function getDatabaseConnect() {
     try
     {
       $dsn = "mysql:host=localhost;dbname=blog-p3-MVC";

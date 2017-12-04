@@ -2,7 +2,7 @@
 // require_once("model/UserRepository.php");
 
 class ControllerInscript{
-  public static function getInscript() {
+  public function getInscript() {
     $prenom = htmlspecialchars($_POST['prenom']);
     $mail   = htmlspecialchars($_POST['mail']);
     $mdp    = htmlspecialchars($_POST['pass']);
